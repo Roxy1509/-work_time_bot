@@ -4,10 +4,12 @@ from dotenv import load_dotenv
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-# Ініціалізація бота
+from aiogram import Bot, Dispatcher, types
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.utils import executor
+
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
-
 # 📊 Дані
 stats = defaultdict(lambda: {"work": 0, "away": 0})
 away_time = None
