@@ -1,19 +1,19 @@
+import os
 from aiogram import Bot, Dispatcher, types
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 from aiogram.utils import executor
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from aiogram.dispatcher.filters import Text
-import logging
-import datetime
-import sys
+from dotenv import load_dotenv
+from datetime import datetime, timedelta
 from collections import defaultdict
 
-# 🔐 Токен бота
-API_TOKEN = "8066022114:AAGXCH3MRmV7Fk3NhfiN-R_CVlRJTZ-qUZw"
+# Завантажуємо .env файл
+load_dotenv()
 
-# 🔧 Логування
-logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+# Отримуємо токен з .env
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-bot = Bot(token=API_TOKEN)
+# Ініціалізація бота
+bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
 
 # 📊 Дані
