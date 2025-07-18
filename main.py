@@ -1,15 +1,7 @@
 import os
-from aiogram import Bot, Dispatcher, types
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
-from aiogram.utils import executor
 from dotenv import load_dotenv
-from datetime import datetime, timedelta
-from collections import defaultdict
 
-# Завантажуємо .env файл
 load_dotenv()
-
-# Отримуємо токен з .env
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 # Ініціалізація бота
